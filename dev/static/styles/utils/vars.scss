@@ -1,21 +1,33 @@
 // Colors
-$white: #ffffff;
-$black: #000000;
+$brand-secondary: #4fd2c2 !default;
+$white: #fff;
+$black: #000;
+$brand-darker: #444;
+$brand-gray: #ccc;
+$brand-lighter: #e9e9e9;
+$brand-body-color: #818892;
+$brand-selection-color: #f9f6f0;
+$brand-overlay-color: #3b3d40;
 
 // Sizes
 $base-font-size: 16px;
 
-$breakpoints: (
-  "phone"       : 400px,
-  "phone-wide"  : 480px,
-  "phablet"     : 560px,
+$breakpoints: ("phone" : 400px,
+  "phone-wide" : 480px,
+  "phablet" : 560px,
   "tablet-small": 640px,
-  "tablet"      : 768px,
+  "tablet" : 768px,
   "tablet-wide" : 1024px,
-  "desktop"     : 1248px,
-  "desktop-wide": 1440px
-);
+  "desktop" : 1248px,
+  "desktop-wide": 1440px);
 
-$content-size: 1024px;
+$content-size: 1140px;
 
 // Fonts
+
+$font-monsterrat: 'Montserrat',
+arial,
+sans-serif;
+$font-opensans: "Open Sans",
+Arial,
+sans-serif;

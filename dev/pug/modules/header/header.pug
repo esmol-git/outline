@@ -1,1 +1,72 @@
-header.header
+section
+    .mobile_menu_container
+        .mobile_menu_content
+            ul
+                li
+                    a.active(href='#home') Home
+                li
+                    a(href='#features') Features
+                li
+                    a(href='#design') Design
+                li
+                    a(href='#testimonies') Testimonies
+                li
+                    a(href='#products') Products
+                li
+                    a(href='#benefits') Benefits
+                li
+                    a(href='#pricing') Pricing
+                li
+                    a(href='#faqs') FAQs
+            .social
+                a(href="#")
+                    +icon('facebook','social-icon')
+                a(href="#")
+                    +icon('twitter','social-icon')
+                a(href="#")
+                    +icon('vk','social-icon')
+                a(href="#")
+                    +icon('skype','social-icon')
+                a(href="#")
+                    +icon('instagram','social-icon')
+
+.mobile_menu_overlay
+section#home
+    header.header(style={"background-image":"url(../static/images/content/header-bg.jpg)"})
+        nav.navbar
+            .container
+                .navbar-wrapper
+                    a.navbar-brand(href='#home')
+                        span Outline
+                    ul.menu
+                        li.menu__item
+                            a.menu__link.active(href='#home') Home
+                        li.menu__item
+                            a.menu__link(href='#features') Features
+                        li.menu__item
+                            a.menu__link(href='#design') Design
+                        li.menu__item
+                            a.menu__link(href='#testimonies') Testimonies
+                        li.menu__item
+                            a.menu__link(href='#products') Products
+                        li.menu__item
+                            a.menu__link(href='#benefits') Benefits
+                        li.menu__item
+                            a.menu__link(href='#pricing') Pricing
+                        li.menu__item
+                            a.menu__link(href='#faqs') FAQs
+                    a.sandwich(href='#')
+                        .sandwich__line.sandwich__line--top
+                        .sandwich__line.sandwich__line--middle
+                        .sandwich__line.sandwich__line--bottom
+a(href="#")#top.top
+    +icon('top')
+section.section#features
+section.section#design
+section.section#testimonies
+section.section#products
+section.section#benefits
+section.section#pricing
+section.section#faqs
+
+                    
