@@ -8,13 +8,17 @@ const uglify = require('gulp-uglify'),
 
 module.exports = function () {
     $.gulp.task('libsJS:dev', () => {
-        return $.gulp.src(['node_modules/svg4everybody/dist/svg4everybody.min.js'])
+        return $.gulp.src(['node_modules/svg4everybody/dist/svg4everybody.min.js',
+                'node_modules/slick-carousel/slick/slick.min.js'
+            ])
             .pipe(concat('libs.min.js'))
             .pipe($.gulp.dest(scriptsPATH.output));
     });
 
     $.gulp.task('libsJS:build', () => {
-        return $.gulp.src(['node_modules/svg4everybody/dist/svg4everybody.min.js'])
+        return $.gulp.src(['node_modules/svg4everybody/dist/svg4everybody.min.js',
+                'node_modules/slick-carousel/slick/slick.min.js'
+            ])
             .pipe(concat('libs.min.js'))
             .pipe(uglify())
             .pipe($.gulp.dest(scriptsPATH.output));
@@ -22,7 +26,8 @@ module.exports = function () {
 
     $.gulp.task('js:dev', () => {
         return $.gulp.src([scriptsPATH.input + '*.js',
-            '!' + scriptsPATH.input + 'libs.min.js'])
+                '!' + scriptsPATH.input + 'libs.min.js'
+            ])
             .pipe(babel({
                 presets: ['@babel/env']
             }))
@@ -34,7 +39,8 @@ module.exports = function () {
 
     $.gulp.task('js:build', () => {
         return $.gulp.src([scriptsPATH.input + '*.js',
-            '!' + scriptsPATH.input + 'libs.min.js'])
+                '!' + scriptsPATH.input + 'libs.min.js'
+            ])
             .pipe(babel({
                 presets: ['@babel/env']
             }))
@@ -43,7 +49,8 @@ module.exports = function () {
 
     $.gulp.task('js:build-min', () => {
         return $.gulp.src([scriptsPATH.input + '*.js',
-            '!' + scriptsPATH.input + 'libs.min.js'])
+                '!' + scriptsPATH.input + 'libs.min.js'
+            ])
             .pipe(concat('main.min.js'))
             .pipe(uglify())
             .pipe($.gulp.dest(scriptsPATH.output))

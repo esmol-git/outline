@@ -3,8 +3,24 @@ header {
 }
 
 .header {
-    min-height: 90vh;
+    min-height: 100vh;
     background-size: cover;
+    padding-bottom: 40px;
+    position: relative;
+
+    &__clients {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba($brand-secondary, .8);
+        padding: 20px;
+
+        &-row {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 }
 
 .mobile_menu {
@@ -20,7 +36,7 @@ header {
     width: auto;
     margin: 0;
     text-decoration: none;
-    transition: linear .5s;
+    transition: linear 0.5s;
 }
 
 .mobile_menu:hover {
@@ -39,14 +55,14 @@ header {
 
 .mobile_menu_container,
 .mobile_menu_container ul li ul {
-    transition: linear .3s;
+    transition: linear 0.3s;
 }
 
 .mobile_menu_overlay {
     display: none;
     cursor: pointer;
     z-index: 100;
-    background: rgba($brand-overlay-color, .5);
+    background: rgba($brand-overlay-color, 0.5);
 }
 
 .mobile_menu_container {
@@ -82,14 +98,12 @@ header {
     color: $black;
     font-weight: bold;
     text-decoration: none;
-    transition: linear .3s;
+    transition: linear 0.3s;
     border-bottom: 1px solid #eaeaea;
-
 }
 
 .mobile_menu_container ul li a.active {
     color: $brand-secondary;
-
 }
 
 .mobile_menu_container ul li a.parent {
@@ -99,7 +113,7 @@ header {
 }
 
 .mobile_menu_container ul li a.parent:hover {
-    background: rgba($brand-body-color, .1) url("../../static/images/content/left-arrow.svg") right 20px center no-repeat;
+    background: rgba($brand-body-color, 0.1) url("../../static/images/content/left-arrow.svg") right 20px center no-repeat;
     background-size: 20px;
 }
 
@@ -116,7 +130,7 @@ header {
 }
 
 .mobile_menu_container ul li a:hover {
-    background: rgba($brand-body-color, .1);
+    background: rgba($brand-body-color, 0.1);
     color: $brand-secondary;
 }
 
@@ -139,7 +153,7 @@ header {
     width: 100%;
     background-color: transparent;
     padding: 20px 0;
-    transition: linear .5s;
+    transition: ease-in-out 0.5s;
 
     &-wrapper {
         padding: 0 20px;
@@ -167,18 +181,19 @@ header {
 
         &:hover {
             color: $white;
-            opacity: .8;
+            opacity: 0.8;
         }
     }
-
 }
 
 .fixed {
-    background-color: rgba($brand-body-color, .325);
+    background-color: rgba($brand-body-color, 0.325);
     z-index: 999;
     position: fixed;
     padding: 10px 0;
-    border-bottom: 2px solid #ccc;
+    //   border-bottom: 2px solid #ccc;
+    box-shadow: 0px 4px 7px 1px rgba(204, 204, 204, 1);
+    margin-top: -55px;
 }
 
 .sandwich {
@@ -195,7 +210,7 @@ header {
         left: 0;
         position: absolute;
         width: 100%;
-        transition: linear .2s;
+        transition: linear 0.2s;
 
         &--top {
             top: 0;
@@ -208,7 +223,6 @@ header {
         &--bottom {
             top: 14px;
         }
-
     }
 
     &:hover {
@@ -255,7 +269,6 @@ header {
             width: 20px;
             background-color: $brand-secondary;
             opacity: 0;
-
         }
 
         &:hover,
@@ -270,8 +283,6 @@ header {
         }
     }
 }
-
-
 
 @media screen and (max-width: 960px) {
     .header {
@@ -293,6 +304,10 @@ header {
     .fixed {
         z-index: 99;
     }
+
+    .navbar-top {
+        display: none;
+    }
 }
 
 .top {
@@ -305,7 +320,7 @@ header {
     bottom: 10px;
     cursor: pointer;
     z-index: 999;
-    transition: background-color .3s, opacity .5s, visibility .5s;
+    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
     opacity: 0;
     visibility: hidden;
     display: flex;
@@ -313,7 +328,7 @@ header {
     justify-content: center;
 
     &.show {
-        opacity: .6;
+        opacity: 0.6;
         visibility: visible;
     }
 
@@ -334,8 +349,9 @@ header {
 
 .social {
     margin-top: 30px;
-    margin-left: 10px;
-
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
     a {
         display: inline-block;
@@ -347,7 +363,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-
+        transition: linear .5s;
     }
 
     &-icon {
@@ -360,4 +376,96 @@ header {
 .section {
     min-height: 100vh;
     border-top: 5px solid red;
+}
+
+.navbar-top {
+    background-color: #000;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        color: $brand-secondary;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .social {
+        margin: 0;
+
+        a {
+            border: none;
+        }
+
+        a:hover {
+            box-shadow: 0px 0px 30px 1px rgba(79, 210, 194, 1);
+        }
+    }
+}
+
+.offer {
+    display: flex;
+    margin-top: 40px;
+    padding: 0 20px;
+    color: $white;
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 100px;
+        max-width: 550px;
+
+        &-title {
+            font-size: 50px;
+            line-height: 50px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        &-subtitle {
+            font-size: 18px;
+            line-height: 26px;
+            letter-spacing: .05em;
+        }
+    }
+
+    &__img {
+
+        img {
+            height: 650px;
+
+        }
+    }
+}
+
+.btn {
+    display: block;
+    padding: 15px 20px 15px 50px;
+    margin-top: 40px;
+    background-color: $brand-secondary;
+    border-radius: 30px;
+    position: relative;
+    transition: linear .5s;
+    font-family: $font-monsterrat;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 11px;
+
+    svg {
+        fill: $white;
+        height: 20px;
+        width: 20px;
+        vertical-align: middle;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:hover {
+        box-shadow: 0 5px 7px rgba(0, 0, 0, .25);
+        background-color: darken($brand-secondary, 20%);
+    }
 }

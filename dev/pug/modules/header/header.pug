@@ -33,6 +33,22 @@ section
 .mobile_menu_overlay
 section#home
     header.header(style={"background-image":"url(../static/images/content/header-bg.jpg)"})
+        .navbar-top
+            .container
+                .navbar-top__wrapper    
+                    a.navbar-top__tel(href="tel:+79999999999") +7(999)999-99-99
+                    a.navbar-top__tel(href="mailto:xxx@xx.xxx") xxx@xx.xxx
+                    .social
+                        a(href="#")
+                            +icon('facebook','social-icon')
+                        a(href="#")
+                            +icon('twitter','social-icon')
+                        a(href="#")
+                            +icon('vk','social-icon')
+                        a(href="#")
+                            +icon('skype','social-icon')
+                        a(href="#")
+                            +icon('instagram','social-icon')
         nav.navbar
             .container
                 .navbar-wrapper
@@ -59,7 +75,28 @@ section#home
                         .sandwich__line.sandwich__line--top
                         .sandwich__line.sandwich__line--middle
                         .sandwich__line.sandwich__line--bottom
-a(href="#")#top.top
+        .container
+            .offer
+                .offer__info
+                    .offer__info-title We take your business to the next level.
+                    .offer__info-subtitle Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blintexts.Separated they live in Bookmarksgrove
+                    a(href="#").btn See on AppStore
+                        +icon("apple")
+                .offer__img
+                    img(src="static/images/content/iphone_6.png", alt="")
+        .header__clients
+            .container
+                .header__clients-row
+                    .header__clients-block
+                        img(src="static/images/content/clients/client_1.png", alt="clients")
+                    .header__clients-block
+                        img(src="static/images/content/clients/client_2.png", alt="clients")
+                    .header__clients-block
+                        img(src="static/images/content/clients/client_3.png", alt="clients")
+                    .header__clients-block
+                        img(src="static/images/content/clients/client_4.png", alt="clients")
+
+a(href="#").top
     +icon('top')
 section.section#features
 section.section#design
