@@ -75,7 +75,23 @@ $(document).ready(function () {
         }, '300');
     });
 
-    $('.header-slider').slick({})
+    $('.header__slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToShow: 1,
+        fade: true,
+        arrows: false,
+        draggable: true
+    })
+
+    // Modal
+    $('[data-modal=buy]').on('click', function () {
+        $('.overlay, #buy').fadeIn('slow');
+    });
+    $('.modal__close').on('click', function () {
+        $('.overlay, #buy').fadeOut('slow');
+        $('form').trigger('reset');
+    });
 
 });
 
