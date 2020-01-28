@@ -31,9 +31,9 @@ section#home
                         a(href="#")
                             +icon('instagram','social-icon')
                     .navbar-top__btn
-                        a(href="#").btn.btn--icon Enter
+                        a(href="#" data-izimodal-open='#modal-custom').btn.btn--icon Enter
                             +icon ('login')
-                        a(href="#").btn.btn--icon Registration
+                        a(href="#" data-izimodal-open='#modal-custom1').btn.btn--icon Registration
                             +icon ('lock')
         nav.navbar
             .container
@@ -102,14 +102,25 @@ section.section#testimonies
 section.section#products
 section.section#benefits
 section.section#pricing
-section.section#faqs
-.overlay
-.modal#buy
-    .modal__close &times;
-    .modal__subtitle Ваш заказ:
-    .modal__descr Пульсометр Polar FT1
-    form.feed-form(action="#")
-        input(required name="name" type="text" placeholder="Ваше имя")
-        input(required name="phone" type="phone" placeholder="Ваш телефон")
-        input(required name="email" type="email" placeholder="Ваше E-mail")
-        button.button.button--submit купить                   
+
+    #modal-custom(data-izimodal-group='grupo1')
+        button.icon-close(data-izimodal-close='') x
+        header
+            a#signin(href='') Sign in
+            a.active(href='') New Account
+        section.hide
+            input(type='text', placeholder='Username')
+            input(type='password', placeholder='Password')
+            footer
+                button(data-izimodal-close='') Cancel
+                button.submit Log in
+        section
+            input(type='text', placeholder='Username')
+            input(type='text', placeholder='Email')
+            input(type='password', placeholder='Password')
+            label(for='check')
+                input#check(type='checkbox', name='checkbox', value='1')
+                |  I agree to the u Terms.
+            footer
+                button(data-izimodal-close='') Cancel
+                button.submit Create Account           
