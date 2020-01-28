@@ -80,7 +80,8 @@ $(document).ready(function () {
         slidesToShow: 1,
         slidesToShow: 1,
         fade: true,
-        arrows: false,
+        prevArrow: '<img class="slider-arrows slider-arrows__left" src="static/images/content/arrow-left.svg" alt="arrow-left"></img>',
+        nextArrow: '<img class="slider-arrows slider-arrows__right" src="static/images/content/arrow-right.svg" alt="arrow-right"></img>',
         draggable: true
     })
 
@@ -93,54 +94,104 @@ $(document).ready(function () {
         $('form').trigger('reset');
     });
 
+
+    screensCarousel: function () {
+        // Screens Carousel
+        $('.filtering').slick({
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            dots: false,
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true
+                }
+            }, {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            }, {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
+        });
+
+        $('.js-filter-all').on('click', function () {
+            $('.filtering').slickUnfilter();
+            $('.filter a').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        $('.js-filter-one').on('click', function () {
+            $('.filtering').slickFilter('.one');
+            $('.filter a').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        $('.js-filter-two').on('click', function () {
+            $('.filtering').slickFilter('.two');
+            $('.filter a').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        $('.js-filter-three').on('click', function () {
+            $('.filtering').slickFilter('.three');
+            $('.filter a').removeClass('active');
+            $(this).addClass('active');
+        });
+
+    }
+
 });
 
-$(function () {
+$(document).on('opening', '.remodal', function () {
+    console.log('opening');
+});
 
-    /* Instantiating iziModal */
-    $("#modal-custom").iziModal({
-        overlayClose: true,
-        overlayColor: 'rgba(0, 0, 0, 0.7)'
-    });
+$(document).on('opened', '.remodal', function () {
+    console.log('opened');
+});
 
-    /*$(document).on('click', '.trigger-custom', function (event) {
-        event.preventDefault();
-        $('#modal-custom').iziModal('open');
-    // });
+$(document).on('closing', '.remodal', function (e) {
+    console.log('closing' + (e.reason ? ', reason: ' + e.reason : ''));
+});
 
-    /* JS inside the modal */
+$(document).on('closed', '.remodal', function (e) {
+    console.log('closed' + (e.reason ? ', reason: ' + e.reason : ''));
+});
 
-    $("#modal-custom").on('click', 'header a', function (event) {
-        event.preventDefault();
-        var index = $(this).index();
-        $(this).addClass('active').siblings('a').removeClass('active');
-        $(this).parents("div").find("section").eq(index).removeClass('hide').siblings('section').addClass('hide');
+$(document).on('confirmation', '.remodal', function () {
+    console.log('confirmation');
+});
 
-        if ($(this).index() === 0) {
-            $("#modal-custom .iziModal-content .icon-close").css('background', '#668855');
-        } else {
-            $("#modal-custom .iziModal-content .icon-close").attr('style', '');
-        }
-    });
+$(document).on('cancellation', '.remodal', function () {
+    console.log('cancellation');
+});
 
-    $("#modal-custom").on('click', '.submit', function (event) {
-        event.preventDefault();
+//  Usage:
+//  $(function() {
+//
+//    // In this case the initialization function returns the already created instance
+//    var inst = $('[data-remodal-id=modal]').remodal();
+//
+//    inst.open();
+//    inst.close();
+//    inst.getState();
+//    inst.destroy();
+//  });
 
-        var fx = "wobble", //wobble shake
-            $modal = $(this).closest('.iziModal');
-
-        if (!$modal.hasClass(fx)) {
-            $modal.addClass(fx);
-            setTimeout(function () {
-                $modal.removeClass(fx);
-            }, 1500);
-        }
-    });
-
-})
-
-
-
+//  The second way to initialize:
+$('[data-remodal-id=modal2]').remodal({
+    modifier: 'with-red-theme'
+});
 
 
 // Полифилы
@@ -187,3 +238,60 @@ if (!Array.from) {
         return [].slice.call(object);
     };
 }
+
+
+
+screensCarousel: function () {
+    // Screens Carousel
+    $('.filtering').slick({
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        dots: false,
+        responsive: [{
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                infinite: true,
+                dots: true
+            }
+        }, {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        }, {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }]
+    });
+
+    $('.js-filter-all').on('click', function () {
+        $('.filtering').slickUnfilter();
+        $('.filter a').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    $('.js-filter-one').on('click', function () {
+        $('.filtering').slickFilter('.one');
+        $('.filter a').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    $('.js-filter-two').on('click', function () {
+        $('.filtering').slickFilter('.two');
+        $('.filter a').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    $('.js-filter-three').on('click', function () {
+        $('.filtering').slickFilter('.three');
+        $('.filter a').removeClass('active');
+        $(this).addClass('active');
+    });
+
+},

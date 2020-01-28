@@ -1,11 +1,11 @@
 const svgSprite = require('gulp-svg-sprite'),
-      svgmin = require('gulp-svgmin'),
-      cheerio = require('gulp-cheerio'),
-      replace = require('gulp-replace'),
-      svgPath = {
-          "input": "./dev/static/images/svg/*.svg",
-          "output": "./build/static/images/svg/"
-      };
+    svgmin = require('gulp-svgmin'),
+    cheerio = require('gulp-cheerio'),
+    replace = require('gulp-replace'),
+    svgPath = {
+        "input": "./dev/static/images/svg/*.svg",
+        "output": "./build/static/images/svg/"
+    };
 
 module.exports = function () {
     $.gulp.task('svg', () => {
@@ -20,8 +20,11 @@ module.exports = function () {
                     $('[fill]').removeAttr('fill');
                     $('[stroke]').removeAttr('stroke');
                     $('[style]').removeAttr('style');
+                    $("[class]").removeAttr("class");
                 },
-                parserOptions: {xmlMode: true}
+                parserOptions: {
+                    xmlMode: true
+                }
             }))
             .pipe(replace('&gt;', '>'))
             .pipe(svgSprite({

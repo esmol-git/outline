@@ -6,13 +6,13 @@ const uglify = require("gulp-uglify"),
   },
   babel = require("gulp-babel");
 
-module.exports = function() {
+module.exports = function () {
   $.gulp.task("libsJS:dev", () => {
     return $.gulp
       .src([
         "node_modules/svg4everybody/dist/svg4everybody.min.js",
         "node_modules/slick-carousel/slick/slick.min.js",
-        "node_modules/izimodal/js/iziModal.min.js"
+        "node_modules/remodal/dist/remodal.min.js"
       ])
       .pipe(concat("libs.min.js"))
       .pipe($.gulp.dest(scriptsPATH.output));
@@ -23,7 +23,7 @@ module.exports = function() {
       .src([
         "node_modules/svg4everybody/dist/svg4everybody.min.js",
         "node_modules/slick-carousel/slick/slick.min.js",
-        "node_modules/izimodal/js/iziModal.min.js"
+        "node_modules/remodal/dist/remodal.min.js"
       ])
       .pipe(concat("libs.min.js"))
       .pipe(uglify())

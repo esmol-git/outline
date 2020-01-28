@@ -1,5 +1,5 @@
 section#home 
-    header.header(style={"background-image":"url(../static/images/content/header-bg.jpg)"})
+    header.header(style={"background-image":"url(static/images/content/header-bg.jpg)"})
         //- .navbar-top
         //-     .container
         //-         .navbar-top__wrapper    
@@ -31,10 +31,10 @@ section#home
                         a(href="#")
                             +icon('instagram','social-icon')
                     .navbar-top__btn
-                        a(href="#" data-izimodal-open='#modal-custom').btn.btn--icon Enter
-                            +icon ('login')
-                        a(href="#" data-izimodal-open='#modal-custom1').btn.btn--icon Registration
-                            +icon ('lock')
+                        a(href="#modal1").btn.btn--icon go in
+                            +icon('login')
+                        a(href="#modal").btn.btn--icon Register
+                            +icon('lock')
         nav.navbar
             .container
                 .navbar-wrapper
@@ -96,31 +96,64 @@ section#home
 a(href="#").top
     +icon('top')
 
+section#screens
+  .container
+    .section-heading.scrollpoint.sp-effect3
+      h1 Screens
+      .divider
+      p See what’s included in the App
+    .filter.scrollpoint.sp-effect3
+      a.button.js-filter-all.active(href='javascript:void(0)') All Screens
+      a.button.js-filter-one(href='javascript:void(0)') User Access
+      a.button.js-filter-two(href='javascript:void(0)') Social Network
+      a.button.js-filter-three(href='javascript:void(0)') Media Players
+    .slider.filtering.scrollpoint.sp-effect5
+      .one
+        img(src='static/images/content/screens/profile.jpg', alt='')
+        h4 Profile Page
+      .two
+        img(src='static/images/content/screens/menu.jpg', alt='')
+        h4 Toggel Menu
+      .three
+        img(src='static/images/content/screens/weather.jpg', alt='')
+        h4 Weather Forcast
+      .one
+        img(src='static/images/content/screens/signup.jpg', alt='')
+        h4 Sign Up
+      .one
+        img(src='static/images/content/screens/calendar.jpg', alt='')
+        h4 Event Calendar
+      .two
+        img(src='static/images/content/screens/options.jpg', alt='')
+        h4 Some Options
+      .three
+        img(src='static/images/content/screens/sales.jpg', alt='')
+        h4 Sales Analysis
+
 section.section#features
 section.section#design
 section.section#testimonies
 section.section#products
 section.section#benefits
 section.section#pricing
+section.section#faqs
 
-    #modal-custom(data-izimodal-group='grupo1')
-        button.icon-close(data-izimodal-close='') x
-        header
-            a#signin(href='') Sign in
-            a.active(href='') New Account
-        section.hide
-            input(type='text', placeholder='Username')
-            input(type='password', placeholder='Password')
-            footer
-                button(data-izimodal-close='') Cancel
-                button.submit Log in
-        section
-            input(type='text', placeholder='Username')
-            input(type='text', placeholder='Email')
-            input(type='password', placeholder='Password')
-            label(for='check')
-                input#check(type='checkbox', name='checkbox', value='1')
-                |  I agree to the u Terms.
-            footer
-                button(data-izimodal-close='') Cancel
-                button.submit Create Account           
+.remodal(data-remodal-id='modal')
+  button.remodal-close(data-remodal-action='close')
+  h1.remodal-title New Account
+  form.form(action="#" class="mod")
+    input.form__input( name="name" type="text" placeholder="Username")
+    input.form__input( name="email" type="phone" placeholder="Email")
+    input.form__input( name="password" type="password" placeholder="Password")
+    .remodal-btn
+        button.remodal-btn--cancel(data-remodal-action='cancel') Cancel
+        button.remodal-btn--confirm(data-remodal-action='confirm') Create Account
+.remodal(data-remodal-id='modal1')
+  button.remodal-close(data-remodal-action='close')
+  h1.remodal-title account
+  form.form(action="#" class="mod")
+    input.form__input( name="name" type="text" placeholder="Username")
+    input.form__input( name="password" type="password" placeholder="Password")
+    .remodal-btn
+        button.remodal-btn--cancel(data-remodal-action='cancel') Cancel
+        button.remodal-btn--confirm(data-remodal-action='confirm') log in
