@@ -32,7 +32,9 @@
     "imagemin-jpeg-recompress": "^6.0.0"
   },
   "dependencies": {
+    "isotope-layout": "^3.0.6",
     "izimodal": "^1.5.1",
+    "magnific-popup": "^1.1.0",
     "normalize.css": "^8.0.1",
     "remodal": "^1.1.1",
     "slick-carousel": "^1.8.1",

@@ -1,0 +1,30 @@
+.title {
+    display: inline-block;
+    width: 100%;
+    color: $black;
+    font-family: Raleway;
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 65px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 15px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 68px;
+        height: 1px;
+        background-color: $brand-secondary;
+    }
+}
+
+.subtitle {
+    color: #727272;
+    font-size: 17px;
+    line-height: 25px;
+    text-align: center;
+}

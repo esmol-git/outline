@@ -31,10 +31,11 @@ section#home
                         a(href="#")
                             +icon('instagram','social-icon')
                     .navbar-top__btn
-                        a(href="#modal1").btn.btn--icon go in
+                        a(href='#form-popup').btn.btn--icon.popup-with-form go in
                             +icon('login')
-                        a(href="#modal").btn.btn--icon Register
-                            +icon('lock')
+                        a(href='#form-popup1').btn.btn--icon.popup-with-form registr
+                            +icon('login')
+                        
         nav.navbar
             .container
                 .navbar-wrapper
@@ -44,7 +45,7 @@ section#home
                         li.menu__item
                             a.menu__link.active(href='#home') Home
                         li.menu__item
-                            a.menu__link(href='#features') Features
+                            a.menu__link(href='#catalog') Catalog
                         li.menu__item
                             a.menu__link(href='#design') Design
                         li.menu__item
@@ -96,64 +97,28 @@ section#home
 a(href="#").top
     +icon('top')
 
-section#screens
-  .container
-    .section-heading.scrollpoint.sp-effect3
-      h1 Screens
-      .divider
-      p See what’s included in the App
-    .filter.scrollpoint.sp-effect3
-      a.button.js-filter-all.active(href='javascript:void(0)') All Screens
-      a.button.js-filter-one(href='javascript:void(0)') User Access
-      a.button.js-filter-two(href='javascript:void(0)') Social Network
-      a.button.js-filter-three(href='javascript:void(0)') Media Players
-    .slider.filtering.scrollpoint.sp-effect5
-      .one
-        img(src='static/images/content/screens/profile.jpg', alt='')
-        h4 Profile Page
-      .two
-        img(src='static/images/content/screens/menu.jpg', alt='')
-        h4 Toggel Menu
-      .three
-        img(src='static/images/content/screens/weather.jpg', alt='')
-        h4 Weather Forcast
-      .one
-        img(src='static/images/content/screens/signup.jpg', alt='')
-        h4 Sign Up
-      .one
-        img(src='static/images/content/screens/calendar.jpg', alt='')
-        h4 Event Calendar
-      .two
-        img(src='static/images/content/screens/options.jpg', alt='')
-        h4 Some Options
-      .three
-        img(src='static/images/content/screens/sales.jpg', alt='')
-        h4 Sales Analysis
 
-section.section#features
-section.section#design
-section.section#testimonies
-section.section#products
-section.section#benefits
-section.section#pricing
-section.section#faqs
+#form-popup.white-popup.mfp-hide
+    .form__title Login
+    form.form(action='#')
+        div
+            input#name.form__input(type='text', placeholder='Name')
+        div
+            input#email.form__input(type='email', placeholder='E-mail')
+        div
+            input.form__btn(type='submit', value='log in')
 
-.remodal(data-remodal-id='modal')
-  button.remodal-close(data-remodal-action='close')
-  h1.remodal-title New Account
-  form.form(action="#" class="mod")
-    input.form__input( name="name" type="text" placeholder="Username")
-    input.form__input( name="email" type="phone" placeholder="Email")
-    input.form__input( name="password" type="password" placeholder="Password")
-    .remodal-btn
-        button.remodal-btn--cancel(data-remodal-action='cancel') Cancel
-        button.remodal-btn--confirm(data-remodal-action='confirm') Create Account
-.remodal(data-remodal-id='modal1')
-  button.remodal-close(data-remodal-action='close')
-  h1.remodal-title account
-  form.form(action="#" class="mod")
-    input.form__input( name="name" type="text" placeholder="Username")
-    input.form__input( name="password" type="password" placeholder="Password")
-    .remodal-btn
-        button.remodal-btn--cancel(data-remodal-action='cancel') Cancel
-        button.remodal-btn--confirm(data-remodal-action='confirm') log in
+#form-popup1.white-popup.mfp-hide
+    .form__title Registration
+    form.form(action='#')
+        div
+            input#name.form__input(type='text', placeholder='Name')
+        div
+            input#email.form__input(type='email', placeholder='E-mail')
+        div
+            input#email.form__input(type='password', placeholder='Password')
+        div
+            input.form__btn(type='submit', value='registration')
+
+
+
