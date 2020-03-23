@@ -230,3 +230,4 @@ if (!Array.from) {
         return [].slice.call(object);
     };
 }
+new WOW().init();
