@@ -1,0 +1,38 @@
+.advantages{
+    padding: 50px 0;
+    &-row{
+        padding-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item{
+        margin-top: 20px;
+        flex-basis: 31%;
+        text-align: center;
+        padding: 20px 10px;
+        margin-right: 20px;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0px 0px 21px -2px rgba(0,0,0,.2);
+        transition: all .25s ease-in-out;
+        &:hover{
+            box-shadow: 0px 0px 21px -2px rgba(0,0,0,.5);
+            transform: translate(0, -6px);
+            svg{
+                fill: darken($brand-secondary, 10%);
+            }
+        }
+        svg{
+            fill: $brand-secondary;
+            width: 70px;
+            height: 70px;
+            margin-bottom: 15px;
+        }
+        &-title{
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: darken($brand-secondary, 20%)
+        }
+    }
+}

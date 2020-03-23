@@ -48,7 +48,7 @@
   }
 
   &-item {
-    width: 30%;
+    width: 340px;
     border: 3px solid #e8e8e8;
     overflow: hidden;
     margin: 20px 10px 0 10px;
@@ -75,4 +75,26 @@
   align-items: center;
   margin: 30px auto 0;
   padding-left: 0;
+}
+@media (max-width: 1024px){
+  .catalog-item{
+    width: 300px;
+  }
+  .catalog__tab{
+    width: 160px;
+    height: 40px;
+    line-height: 1;
+  }
+}
+@media (max-width: 768px){
+  .catalog-item{
+    width: 335px;
+  }
+}
+@media (max-width: 524px){
+  .catalog__tab{
+   width: 80px;
+   height: 25px;
+   font-size: 12px;
+  }
 }

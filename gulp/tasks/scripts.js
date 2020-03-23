@@ -6,7 +6,7 @@ const uglify = require("gulp-uglify"),
   },
   babel = require("gulp-babel");
 
-module.exports = function() {
+module.exports = function () {
   $.gulp.task("libsJS:dev", () => {
     return $.gulp
       .src([
@@ -14,7 +14,10 @@ module.exports = function() {
         "node_modules/slick-carousel/slick/slick.min.js",
         "node_modules/remodal/dist/remodal.min.js",
         "node_modules/isotope-layout/dist/isotope.pkgd.min.js",
-        "node_modules/magnific-popup/dist/jquery.magnific-popup.min.js"
+        "node_modules/magnific-popup/dist/jquery.magnific-popup.min.js",
+        "node_modules/mmenu-js/dist/mmenu.js",
+        "node_modules/readmore-js/readmore.js",
+
       ])
       .pipe(concat("libs.min.js"))
       .pipe($.gulp.dest(scriptsPATH.output));
@@ -27,7 +30,9 @@ module.exports = function() {
         "node_modules/slick-carousel/slick/slick.min.js",
         "node_modules/remodal/dist/remodal.min.js",
         "node_modules/isotope-layout/dist/isotope.pkgd.min.js",
-        "node_modules/magnific-popup/dist/jquery.magnific-popup.min.js"
+        "node_modules/magnific-popup/dist/jquery.magnific-popup.min.js",
+        "node_modules/mmenu-js/dist/mmenu.js",
+        "node_modules/readmore-js/readmore.js",
       ])
       .pipe(concat("libs.min.js"))
       .pipe(uglify())

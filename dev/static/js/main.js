@@ -1,4 +1,17 @@
 $(document).ready(function () {
+
+//Readmore
+
+$('.more').readmore({
+    speed: 75,
+    moreLink: '<a href="#">Read less</a>',
+    lessLink: '<a href="#">Close</a>',
+    collapsedHeight: 80,
+    maxHeight: 500,
+    heightMargin: 16,
+    embedCSS: true
+  });
+
     //Мобильное меню
 
     $(function () {
@@ -20,9 +33,9 @@ $(document).ready(function () {
             $(".mobile_menu_container").addClass("loaded");
             $(".mobile_menu_overlay").fadeIn();
         });
-        $(document).on("click", ".mobile_menu_overlay", function (e) {
+        $(document).on("click", ".mobile_menu_overlay, .mobile_menu_container ul li a", function (e) {
             $(".mobile_menu_container").removeClass("loaded");
-            $(this).fadeOut();
+            $(".mobile_menu_overlay").fadeOut();
         });
     });
     //-------------------------------------------------------------------------
@@ -104,8 +117,8 @@ $(document).ready(function () {
 
     //Каталог с фильтрацией по категориям
     var $grid = $(".catalog__content").isotope({
-        itemSelector: ".catalog-item"
-        // layoutMode: "fitRows"
+        itemSelector: ".catalog-item",
+        layoutMode: "fitRows"
     });
     var filterFns = {
         // show if name ends with -ium
@@ -169,7 +182,9 @@ $(".accordion_tab").click(function () {
     });
     $(this).parent().addClass("active");
     $(this).addClass("active");
+
 });
+
 
 // Полифилы
 
