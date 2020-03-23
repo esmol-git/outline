@@ -4,12 +4,11 @@ $(document).ready(function () {
 
 $('.more').readmore({
     speed: 75,
-    moreLink: '<a href="#">Read less</a>',
-    lessLink: '<a href="#">Close</a>',
-    collapsedHeight: 80,
+    moreLink: '<a href="#" class="more-btn">Продолжить...</a>',
+    lessLink: '<a href="#" class="more-btn">Закрыть</a>',
+    collapsedHeight: 120,
     maxHeight: 500,
-    heightMargin: 16,
-    embedCSS: true
+    heightMargin: 16
   });
 
     //Мобильное меню
