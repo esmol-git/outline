@@ -1,1 +1,26 @@
-footer.footer#footer
+section#contacts
+    footer.footer
+        .container
+            .title Contacts
+            form#contact-form_1.contact-form(method='POST', enctype='multipart/form-data')
+                p.contact-form__description
+                .contact-form__input-wrapper
+                    input.contact-form__input.contact-form__input_name.form__input(name='name', type='text', placeholder='Введите ваше имя')
+                    .contact-form__error.contact-form__error_name
+                .contact-form__input-wrapper
+                    input#phone.contact-form__input.contact-form__input_tel.form__input(name='tel', type='tel' placeholder='Введите ваш телефон')
+                    .contact-form__error.contact-form__error_tel
+                .contact-form__input-wrapper
+                    input.contact-form__input.contact-form__input_email.form__input(name='email', type='email', placeholder='Введите ваш email')
+                    .contact-form__error.contact-form__error_email
+                button.contact-form__button.form__btn(type='submit')  Отправить
+        script(type='text/javascript', charset='utf-8', async='', src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A985378e10e4054306ac79c4cbea83873e4e196a31ea7fcf68df228255423d040&width=100%25&height=400&lang=ru_RU&scroll=false')
+        .footer__bottom
+            .container
+                p.text-center
+                    | Copyright © 2010 - 
+                    script.
+                        var CurrentYear = new Date().getFullYear()
+                        document.write(CurrentYear)
+
+

@@ -18,6 +18,7 @@ module.exports = function () {
         "node_modules/mmenu-js/dist/mmenu.js",
         "node_modules/readmore-js/readmore.js",
         "node_modules/wowjs/dist/wow.min.js",
+        "node_modules/jquery.ripples/dist/jquery.ripples-min.js"
 
       ])
       .pipe(concat("libs.min.js"))
@@ -35,6 +36,8 @@ module.exports = function () {
         "node_modules/mmenu-js/dist/mmenu.js",
         "node_modules/readmore-js/readmore.js",
         "node_modules/wowjs/dist/wow.min.js",
+        "node_modules/jquery.ripples/dist/jquery.ripples-min.js"
+
       ])
       .pipe(concat("libs.min.js"))
       .pipe(uglify())

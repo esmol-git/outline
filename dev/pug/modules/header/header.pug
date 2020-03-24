@@ -1,5 +1,5 @@
 section#home
-    header.header(style={"background-image":"url(static/images/content/header-bg.jpg)"})
+    header.header(style={"background-image":"url(static/images/content/aqua.jpg)"})
         //- .navbar-top
         //-     .container
         //-         .navbar-top__wrapper
@@ -35,6 +35,8 @@ section#home
                             +icon('lock')
                         a(href='#form-popup1').btn.btn--icon.popup-with-form registr
                             +icon('login')
+                        a(href='#form-call').btn.btn--icon.popup-with-form call back
+                            +icon('phone')
         nav.navbar
             .container
                 .navbar-wrapper
@@ -53,10 +55,10 @@ section#home
                         //-     a.menu__link(href='#products') Products
                         //- li.menu__item
                         //-     a.menu__link(href='#benefits') Benefits
-                        //- li.menu__item
-                        //-     a.menu__link(href='#pricing') Pricing
                         li.menu__item
                             a.menu__link(href='#faqs') FAQs
+                        li.menu__item
+                            a.menu__link(href='#contacts') Contacts
                     a.sandwich(href='#')
                         .sandwich__line.sandwich__line--top
                         .sandwich__line.sandwich__line--middle
@@ -95,8 +97,6 @@ section#home
 
 a(href="#").top
     +icon('top')
-
-
 #form-popup.white-popup.mfp-hide
     .form__title Login
     form.form(action='#')
@@ -118,6 +118,10 @@ a(href="#").top
             input#email.form__input(type='password', placeholder='Password')
         div
             input.form__btn(type='submit', value='registration')
+#form-call.white-popup.mfp-hide
+    .form__title Оставьте Вашу заявку
+    p.contact-form__description
+    
 
 
 

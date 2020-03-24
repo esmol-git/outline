@@ -2,11 +2,14 @@
     &-row{
         padding-top: 30px;
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
     }
     &__item{
         margin-top: 20px;
-        flex-basis: 31%;
+        max-height: 315px;
+        flex-basis: 30%;
         text-align: center;
         padding: 20px 10px;
         margin-right: 20px;
@@ -40,7 +43,9 @@
 }
 .more{
     overflow: hidden;
+    transition: all .25s;
     &-btn{
         color: $brand-secondary;
     }
 }
+

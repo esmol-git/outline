@@ -35,6 +35,8 @@
     "animate.css": "^3.7.2",
     "isotope-layout": "^3.0.6",
     "izimodal": "^1.5.1",
+    "jquery.maskedinput": "^1.4.1",
+    "jquery.ripples": "^0.6.3",
     "magnific-popup": "^1.1.0",
     "mmenu-js": "^8.4.6",
     "normalize.css": "^8.0.1",

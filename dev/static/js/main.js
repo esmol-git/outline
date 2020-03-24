@@ -1,9 +1,11 @@
 $(document).ready(function () {
 
+    
+
 //Readmore
 
 $('.more').readmore({
-    speed: 75,
+    speed: 100,
     moreLink: '<a href="#" class="more-btn">Продолжить...</a>',
     lessLink: '<a href="#" class="more-btn">Закрыть</a>',
     collapsedHeight: 120,
@@ -147,6 +149,12 @@ $('.more').readmore({
             $(this).addClass("is-checked");
         });
     });
+
+    $('.header').ripples({
+        resolution: 512,
+        dropRadius: 20,
+        perturbance: 0.04,
+    });
 });
 //-------------------------------------------------------------------------
 
@@ -183,6 +191,7 @@ $(".accordion_tab").click(function () {
     $(this).addClass("active");
 
 });
+
 
 
 // Полифилы
@@ -231,3 +240,10 @@ if (!Array.from) {
     };
 }
 new WOW().init();
+
+$(document).ready(function() {
+    $("#phone").mask("+7 (999) 99-99-999");
+    
+  });
+
+  
